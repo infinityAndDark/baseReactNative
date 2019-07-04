@@ -149,10 +149,10 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-secure-key-store')
     implementation project(':react-native-reanimated')
     implementation project(':react-native-linear-gradient')
     implementation project(':react-native-exit-app')
-    implementation project(':react-native-restart')
     implementation project(':react-native-localization')
     implementation project(':react-native-fingerprint-scanner')
     implementation project(':react-native-gesture-handler')

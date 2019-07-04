@@ -29,10 +29,16 @@ export default class LoginScreen extends BaseScreen {
     };
   }
   handleFingerprintShowed = () => {
-    this.setState({ ...this.state, popupShowed: true });
+    this.setState({
+      ...this.state,
+      popupShowed: true
+    });
   };
   hideFingerprint = () => {
-    this.setState({ ...this.state, popupShowed: false });
+    this.setState({
+      ...this.state,
+      popupShowed: false
+    });
   };
 
   handleFingerprintDismissed = isCorrectFingerprint => {
@@ -118,6 +124,36 @@ export default class LoginScreen extends BaseScreen {
     else this.showModalExit();
     return true;
   };
+  renderButtonBottom=()=>{
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between"
+        }}
+      >
+        <ButtonText
+          onPress={this.goToRegister}
+          textStyle={styles.buttonText}
+          title={Context.getString("login_button_register")}
+        />
+        <ButtonText
+          onPress={this.goToForgot}
+          textStyle={styles.buttonText}
+          title={Context.getString("login_button_forgot")}
+        />
+      </View>
+    );
+  }
+  renderLogo=()=>{
+    return (
+      <Image
+        source={Context.getImage("logo")}
+        resizeMode="contain"
+        style={styles.imageLogo}
+      />
+    );
+  }
   render() {
     const { errorMessage, popupShowed } = this.state;
 
@@ -131,11 +167,7 @@ export default class LoginScreen extends BaseScreen {
             style={styles.container}
           >
             <View style={{ flex: 1 }} />
-            <Image
-              source={Context.getImage("logo")}
-              resizeMode="contain"
-              style={styles.imageLogo}
-            />
+            {this.renderLogo()}
             <ButtonText
               style={styles.buttonLanguage}
               onPress={this.changeLanguage}
@@ -146,7 +178,10 @@ export default class LoginScreen extends BaseScreen {
             <TextInput
               ref="userName"
               onChangeText={text =>
-                this.setState({ ...this.state, userName: text })
+                this.setState({
+                  ...this.state,
+                  userName: text
+                })
               }
               value={this.state.userName}
               placeholder={Context.getString("login_hint_user_name")}
@@ -157,7 +192,10 @@ export default class LoginScreen extends BaseScreen {
             <TextInput
               ref="password"
               onChangeText={text =>
-                this.setState({ ...this.state, password: text })
+                this.setState({
+                  ...this.state,
+                  password: text
+                })
               }
               value={this.state.password}
               placeholder={Context.getString("login_hint_password")}
@@ -182,23 +220,7 @@ export default class LoginScreen extends BaseScreen {
               iconSource={Context.getImage("loginFingerprint")}
             />
             <View style={{ flex: 1 }} />
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between"
-              }}
-            >
-              <ButtonText
-                onPress={this.goToRegister}
-                textStyle={styles.buttonText}
-                title={Context.getString("login_button_register")}
-              />
-              <ButtonText
-                onPress={this.goToForgot}
-                textStyle={styles.buttonText}
-                title={Context.getString("login_button_forgot")}
-              />
-            </View>
+            {this.renderButtonBottom()}
             <ModalConfirm
               content={Context.getString("app_exit_question")}
               isVisible={this.state.modalExitVisible}

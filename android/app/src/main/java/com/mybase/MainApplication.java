@@ -3,10 +3,10 @@ package com.mybase;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactlibrary.securekeystore.RNSecureKeyStorePackage;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.github.wumke.RNExitApp.RNExitAppPackage;
-import com.avishayil.rnrestart.ReactNativeRestartPackage;
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 import com.hieuvp.fingerprint.ReactNativeFingerprintScannerPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -30,10 +30,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSecureKeyStorePackage(),
             new ReanimatedPackage(),
             new LinearGradientPackage(),
             new RNExitAppPackage(),
-            new ReactNativeRestartPackage(),
             new ReactNativeLocalizationPackage(),
             new ReactNativeFingerprintScannerPackage(),
             new RNGestureHandlerPackage()

@@ -1,15 +1,17 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import Context from "context";
 import { BaseScreen, Button, HandleBack, ModalConfirm } from "component";
 import Util from "util";
+import LocalStorage from "middleware/helper/LocalStorage";
 
 export default class HomeScreen extends BaseScreen {
   constructor(props) {
     super(props);
     this.state = {
       modalLogoutVisible: false,
-      modalExitVisible: false
+      modalExitVisible: false,
+      token: ""
     };
   }
   goToMain = () => {
@@ -59,10 +61,37 @@ export default class HomeScreen extends BaseScreen {
     this.showModalExit();
     return true;
   };
+
+  componentDidMount() {
+    this.getToken();
+  }
+  async getToken() {
+    try {
+      await LocalStorage.saveToken("NGUYEN DANG THO");
+      let value = await LocalStorage.getToken();
+      this.setState({
+        token: value
+      });
+    } catch (e) {
+      this.setState({
+        token: JSON.stringify(e)
+      });
+    }
+  }
+
   render() {
     return (
       <HandleBack onBack={this.onBackPress}>
         <View style={styles.container}>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <Text>{this.state.token}</Text>
+          </View>
           <Button
             style={styles.button}
             title={Context.getString("home_button_logout")}
@@ -89,9 +118,19 @@ export default class HomeScreen extends BaseScreen {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: Context.getColor("background")
   },
-  button: { marginTop: 50 }
+  FlatList_Item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44
+  },
+  header_footer_style: {
+    width: "100%",
+    height: 44,
+    backgroundColor: "#4CAF50",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  button: { margin: 50 }
 });

@@ -43,10 +43,11 @@
 		DF05AAAE42B94252ADB705F4 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 741B0F30B7F14EB9B1D22BED /* libRNGestureHandler-tvOS.a */; };
 		DCAA1F1E2840405D982025EE /* libReactNativeFingerprintScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0354CD0CB56E4E7F90FDC25D /* libReactNativeFingerprintScanner.a */; };
 		52F9C9B6CD3D4048AE8E313A /* libReactNativeLocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF215BA88CF420EBC7B364A /* libReactNativeLocalization.a */; };
-		9751ABC699064359BEE1EA4E /* libRCTRestart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 122362F5858449C4887F68F0 /* libRCTRestart.a */; };
 		AD64B3D6E6224C9C9C344FD3 /* libRNExitApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C641ABB43348B294B7E0A8 /* libRNExitApp.a */; };
 		A7DB37B6655C49839194AFA5 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDDC93EACA942F5AF75EFAE /* libBVLinearGradient.a */; };
 		8C058CFD18A9498A8A3B2862 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875B9BEDC9F0442B9AD13788 /* libRNReanimated.a */; };
+		00048C30B5994C8AA4D42C00 /* libRNSecureKeyStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715CB8D4DFE74DA4A95BCD34 /* libRNSecureKeyStore.a */; };
+		825AC8EB7B2C40B1A5BBABFA /* libRNSecureKeyStore-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB12799A31740E19904CCCA /* libRNSecureKeyStore-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -361,14 +362,15 @@
 		0354CD0CB56E4E7F90FDC25D /* libReactNativeFingerprintScanner.a */ = {isa = PBXFileReference; name = "libReactNativeFingerprintScanner.a"; path = "libReactNativeFingerprintScanner.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		51E01A822BD24A4AB74A95E3 /* ReactNativeLocalization.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeLocalization.xcodeproj"; path = "../node_modules/react-native-localization/ReactNativeLocalization.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		AEF215BA88CF420EBC7B364A /* libReactNativeLocalization.a */ = {isa = PBXFileReference; name = "libReactNativeLocalization.a"; path = "libReactNativeLocalization.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		5301CEF287714D6DBA1B0949 /* RCTRestart.xcodeproj */ = {isa = PBXFileReference; name = "RCTRestart.xcodeproj"; path = "../node_modules/react-native-restart/ios/RCTRestart.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		122362F5858449C4887F68F0 /* libRCTRestart.a */ = {isa = PBXFileReference; name = "libRCTRestart.a"; path = "libRCTRestart.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		DE5DB8FB8331473EB56380BD /* RNExitApp.xcodeproj */ = {isa = PBXFileReference; name = "RNExitApp.xcodeproj"; path = "../node_modules/react-native-exit-app/ios/RNExitApp.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		37C641ABB43348B294B7E0A8 /* libRNExitApp.a */ = {isa = PBXFileReference; name = "libRNExitApp.a"; path = "libRNExitApp.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		AD66BFA9816241419A136F95 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		FEDDC93EACA942F5AF75EFAE /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		9F40554987404F06A54DAB3A /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; name = "RNReanimated.xcodeproj"; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		875B9BEDC9F0442B9AD13788 /* libRNReanimated.a */ = {isa = PBXFileReference; name = "libRNReanimated.a"; path = "libRNReanimated.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		970DFE6FEB074254AA9192E2 /* RNSecureKeyStore.xcodeproj */ = {isa = PBXFileReference; name = "RNSecureKeyStore.xcodeproj"; path = "../node_modules/react-native-secure-key-store/ios/RNSecureKeyStore.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		715CB8D4DFE74DA4A95BCD34 /* libRNSecureKeyStore.a */ = {isa = PBXFileReference; name = "libRNSecureKeyStore.a"; path = "libRNSecureKeyStore.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		FDB12799A31740E19904CCCA /* libRNSecureKeyStore-tvOS.a */ = {isa = PBXFileReference; name = "libRNSecureKeyStore-tvOS.a"; path = "libRNSecureKeyStore-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,10 +402,10 @@
 				D2A69A0A44474176A5FF834D /* libRNGestureHandler.a in Frameworks */,
 				DCAA1F1E2840405D982025EE /* libReactNativeFingerprintScanner.a in Frameworks */,
 				52F9C9B6CD3D4048AE8E313A /* libReactNativeLocalization.a in Frameworks */,
-				9751ABC699064359BEE1EA4E /* libRCTRestart.a in Frameworks */,
 				AD64B3D6E6224C9C9C344FD3 /* libRNExitApp.a in Frameworks */,
 				A7DB37B6655C49839194AFA5 /* libBVLinearGradient.a in Frameworks */,
 				8C058CFD18A9498A8A3B2862 /* libRNReanimated.a in Frameworks */,
+				00048C30B5994C8AA4D42C00 /* libRNSecureKeyStore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +423,7 @@
 				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
 				DF05AAAE42B94252ADB705F4 /* libRNGestureHandler-tvOS.a in Frameworks */,
+				825AC8EB7B2C40B1A5BBABFA /* libRNSecureKeyStore-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,10 +600,10 @@
 				E172AEF8F4E74E3F9BC4EB62 /* RNGestureHandler.xcodeproj */,
 				0A8346DB18DA427A9DB7B06B /* ReactNativeFingerprintScanner.xcodeproj */,
 				51E01A822BD24A4AB74A95E3 /* ReactNativeLocalization.xcodeproj */,
-				5301CEF287714D6DBA1B0949 /* RCTRestart.xcodeproj */,
 				DE5DB8FB8331473EB56380BD /* RNExitApp.xcodeproj */,
 				AD66BFA9816241419A136F95 /* BVLinearGradient.xcodeproj */,
 				9F40554987404F06A54DAB3A /* RNReanimated.xcodeproj */,
+				970DFE6FEB074254AA9192E2 /* RNSecureKeyStore.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1230,21 +1233,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Debug;
@@ -1268,21 +1265,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Release;
@@ -1308,9 +1299,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Debug;
@@ -1335,9 +1326,9 @@
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Release;
@@ -1369,21 +1360,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Debug;
@@ -1415,21 +1400,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Release;
@@ -1460,21 +1439,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Debug;
@@ -1505,21 +1478,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-fingerprint-scanner\ios",
 					"$(SRCROOT)\..\node_modules\react-native-localization",
-					"$(SRCROOT)\..\node_modules\react-native-restart\ios\RCTRestart",
 					"$(SRCROOT)\..\node_modules\react-native-linear-gradient\BVLinearGradient",
 					"$(SRCROOT)\..\node_modules\react-native-reanimated\ios/**",
+					"$(SRCROOT)\..\node_modules\react-native-secure-key-store\ios/**",
 				);
 			};
 			name = Release;

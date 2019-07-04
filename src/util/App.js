@@ -1,10 +1,10 @@
-import RNRestart from "react-native-restart";
+//import RNRestart from "react-native-restart";
 import RNExitApp from "react-native-exit-app";
 import { Dimensions } from "react-native";
 
 export default class App {
   static restartApp = () => {
-    RNRestart.Restart();
+  //  RNRestart.Restart();
   };
   static exitApp = () => {
     RNExitApp.exitApp();
