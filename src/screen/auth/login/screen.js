@@ -14,9 +14,6 @@ import {
 import Context from "context";
 import Util from "util";
 
-import FingerprintScanner from "react-native-fingerprint-scanner";
-import FingerprintPopup from "./FingerprintPopup";
-
 export default class LoginScreen extends BaseScreen {
   constructor(props) {
     super(props);
@@ -24,37 +21,8 @@ export default class LoginScreen extends BaseScreen {
       userName: "",
       password: "",
       errorMessage: undefined,
-      popupShowed: false,
       modalExitVisible: false
     };
-  }
-  handleFingerprintShowed = () => {
-    this.setState({
-      ...this.state,
-      popupShowed: true
-    });
-  };
-  hideFingerprint = () => {
-    this.setState({
-      ...this.state,
-      popupShowed: false
-    });
-  };
-
-  handleFingerprintDismissed = isCorrectFingerprint => {
-    this.setState({
-      ...this.state,
-      popupShowed: false,
-      isCorrectFingerprint: isCorrectFingerprint
-    });
-  };
-  componentDidMount() {
-    FingerprintScanner.isSensorAvailable().catch(error =>
-      this.setState({
-        ...this.state,
-        errorMessage: error.message
-      })
-    );
   }
 
   goToMain = () => {
@@ -73,7 +41,6 @@ export default class LoginScreen extends BaseScreen {
     Context.application.showMsg(Context.getString("hello", "Thọ"));
   };
   login = () => {
-    if (this.state.isCorrectFingerprint !== "OK") {
       if (this.state.userName.length == 0) {
         Context.application.showMsg(
           Context.getString("login_message_empty_user_name"),
@@ -88,15 +55,11 @@ export default class LoginScreen extends BaseScreen {
         );
         return;
       }
-    }
 
     Context.application.showLoading();
     this.props.login(this.state.userName, this.state.password);
   };
   componentDidUpdate() {
-    if (this.state.isCorrectFingerprint === "OK") {
-      this.login();
-    }
     if (this.props.isLogin) {
       Context.application.hideLoading();
       this.goToMain();
@@ -120,8 +83,7 @@ export default class LoginScreen extends BaseScreen {
     Util.App.exitApp();
   };
   onBackPress = () => {
-    if (this.state.popupShowed) this.hideFingerprint();
-    else this.showModalExit();
+    this.showModalExit();
     return true;
   };
   renderButtonBottom=()=>{
@@ -155,7 +117,7 @@ export default class LoginScreen extends BaseScreen {
     );
   }
   render() {
-    const { errorMessage, popupShowed } = this.state;
+    const { errorMessage } = this.state;
 
     return (
       <HandleBack onBack={this.onBackPress}>
@@ -216,7 +178,6 @@ export default class LoginScreen extends BaseScreen {
             </Text>
             <ButtonImage
               style={styles.buttonFinger}
-              onPress={this.handleFingerprintShowed}
               iconSource={Context.getImage("loginFingerprint")}
             />
             <View style={{ flex: 1 }} />
@@ -227,12 +188,6 @@ export default class LoginScreen extends BaseScreen {
               onAccept={this.exitApp}
               onCancel={this.hideModalExit}
             />
-            {popupShowed && (
-              <FingerprintPopup
-                style={styles.popup}
-                handlePopupDismissed={this.handleFingerprintDismissed}
-              />
-            )}
           </LinearGradient>
         </DismissKeyboardView>
       </HandleBack>
