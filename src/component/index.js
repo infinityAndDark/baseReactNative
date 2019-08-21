@@ -8,6 +8,8 @@ import TextInput from "./TextInput";
 import DismissKeyboardView from "./DismissKeyboardView";
 import HandleBack from "./HandleBack";
 import ModalConfirm from "./ModalConfirm";
+import Header from "./Header";
+import withExitModal from "./HOCExitModal";
 export {
   BaseScreen,
   ButtonImage,
@@ -19,4 +21,6 @@ export {
   DismissKeyboardView,
   HandleBack,
   ModalConfirm,
+  Header,
+  withExitModal,
 };

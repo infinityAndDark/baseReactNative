@@ -5,14 +5,12 @@ import {
   BaseScreen,
   TextInput,
   Button,
-  ButtonImage,
   ButtonText,
-  ModalConfirm,
   HandleBack,
-  DismissKeyboardView
+  DismissKeyboardView,
+  Header
 } from "component";
 import Context from "context";
-import Util from "util";
 
 export default class LoginScreen extends BaseScreen {
   constructor(props) {
@@ -20,8 +18,7 @@ export default class LoginScreen extends BaseScreen {
     this.state = {
       userName: "",
       password: "",
-      errorMessage: undefined,
-      modalExitVisible: false
+      errorMessage: undefined
     };
   }
 
@@ -31,30 +28,24 @@ export default class LoginScreen extends BaseScreen {
   goToForgot = () => {
     Context.application.showMsg(Context.getString("login_button_forgot"));
   };
-  changeLanguage = () => {
-    let currentLang = Context.getLanguage();
-    if (currentLang === "en") currentLang = "vi";
-    else currentLang = "en";
-    Context.application.changeLanguage(currentLang);
-  };
   goToRegister = () => {
     Context.application.showMsg(Context.getString("hello", "Thọ"));
   };
   login = () => {
-      if (this.state.userName.length == 0) {
-        Context.application.showMsg(
-          Context.getString("login_message_empty_user_name"),
-          "danger"
-        );
-        return;
-      }
-      if (this.state.password.length == 0) {
-        Context.application.showMsg(
-          Context.getString("login_message_empty_password"),
-          "danger"
-        );
-        return;
-      }
+    if (this.state.userName.length == 0) {
+      Context.application.showMsg(
+        Context.getString("login_message_empty_user_name"),
+        "danger"
+      );
+      return;
+    }
+    if (this.state.password.length == 0) {
+      Context.application.showMsg(
+        Context.getString("login_message_empty_password"),
+        "danger"
+      );
+      return;
+    }
 
     Context.application.showLoading();
     this.props.login(this.state.userName, this.state.password);
@@ -65,28 +56,12 @@ export default class LoginScreen extends BaseScreen {
       this.goToMain();
     }
   }
-
-  showModalExit = () => {
-    this.setState({
-      ...this.state,
-      modalExitVisible: true
-    });
-  };
-  hideModalExit = () => {
-    this.setState({
-      ...this.state,
-      modalExitVisible: false
-    });
-  };
-  exitApp = () => {
-    this.hideModalExit();
-    Util.App.exitApp();
-  };
   onBackPress = () => {
-    this.showModalExit();
+    if (!this.props.showModalExit) return false;
+    this.props.showModalExit();
     return true;
   };
-  renderButtonBottom=()=>{
+  renderButtonBottom = () => {
     return (
       <View
         style={{
@@ -106,8 +81,8 @@ export default class LoginScreen extends BaseScreen {
         />
       </View>
     );
-  }
-  renderLogo=()=>{
+  };
+  renderLogo = () => {
     return (
       <Image
         source={Context.getImage("logo")}
@@ -115,27 +90,21 @@ export default class LoginScreen extends BaseScreen {
         style={styles.imageLogo}
       />
     );
-  }
+  };
   render() {
     const { errorMessage } = this.state;
 
     return (
       <HandleBack onBack={this.onBackPress}>
         <DismissKeyboardView>
-          <LinearGradient
-            start={{ x: 0.0, y: 0.0 }}
-            end={{ x: 1.0, y: 1.0 }}
-            colors={["#F8E3DB", "#FFFFFF", "#E4FECF"]}
-            style={styles.container}
-          >
+          <Header title="Đăng nhập" navigation={this.props.navigation} />
+          <View style={styles.container}>
+            <Image
+              style={{ flex: 1, position: "absolute" }}
+              source={Context.getImage("loginBack")}
+            />
             <View style={{ flex: 1 }} />
             {this.renderLogo()}
-            <ButtonText
-              style={styles.buttonLanguage}
-              onPress={this.changeLanguage}
-              textStyle={styles.textLanguage}
-              title={Context.getString("login_button_language")}
-            />
             <View style={{ flex: 0.5 }} />
             <TextInput
               ref="userName"
@@ -173,22 +142,9 @@ export default class LoginScreen extends BaseScreen {
               title={Context.getString("login_button_login")}
               onPress={this.login}
             />
-            <Text style={styles.textOr}>
-              {Context.getString("login_text_or")}
-            </Text>
-            <ButtonImage
-              style={styles.buttonFinger}
-              iconSource={Context.getImage("loginFingerprint")}
-            />
             <View style={{ flex: 1 }} />
             {this.renderButtonBottom()}
-            <ModalConfirm
-              content={Context.getString("app_exit_question")}
-              isVisible={this.state.modalExitVisible}
-              onAccept={this.exitApp}
-              onCancel={this.hideModalExit}
-            />
-          </LinearGradient>
+          </View>
         </DismissKeyboardView>
       </HandleBack>
     );
@@ -200,40 +156,15 @@ const styles = StyleSheet.create({
     paddingRight: 40,
     paddingBottom: 20,
     paddingTop: 40,
-    flex: 1,
-    backgroundColor: Context.getColor("background")
+    flex: 1
   },
   imageLogo: {
     alignSelf: "center",
     width: "65%",
     height: 60
   },
-  textOr: {
-    margin: 26,
-    color: Context.getColor("textHint"),
-    alignSelf: "center",
-    alignContent: "center",
-    textAlign: "center"
-  },
-  buttonFinger: {
-    alignSelf: "center",
-    width: 70,
-    height: 70
-  },
   buttonText: {
     fontWeight: "400",
     color: Context.getColor("primary")
   },
-  popup: {
-    width: Util.App.screen.width * 0.7
-  },
-  buttonLanguage: {
-    alignSelf: "center",
-    marginBottom: 15
-  },
-  textLanguage: {
-    fontWeight: "400",
-    color: Context.getColor("textHint"),
-    textDecorationLine: "underline"
-  }
 });

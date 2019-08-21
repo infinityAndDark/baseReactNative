@@ -13,6 +13,9 @@ export default class NetworkRequest {
   setHandleResponse(handler) {
     this.handleSuccessResponse = handler;
   }
+  setHandleError(handler) {
+    this.handleErrorResponse = handler;
+  }
   createInstance(host) {
     let _instance = axios.create({
       baseURL: host,
@@ -69,7 +72,7 @@ export default class NetworkRequest {
         option = { ...option, params: params };
       }
     }
-    if (header) option = { ...option, header: { ...option.header, header } };
+    if (header) option = { ...option, headers: { ...option.header, header } };
     if (moreOption) option = { ...option, ...moreOption };
     return option;
   }
@@ -80,6 +83,11 @@ export default class NetworkRequest {
     }
     if (!status || status === 500) status = 500;
     if (!message) message = "Something went wrong!";
+    if (this.handleErrorResponse)
+      return {
+        status: status,
+        ...this.handleErrorResponse(status, message)
+      };
     return { status: status, message: message };
   }
 

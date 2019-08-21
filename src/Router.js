@@ -9,6 +9,7 @@ import createAnimatedSwitchNavigator from "react-navigation-animated-switch";
 import { Transition } from "react-native-reanimated";
 import SplashScreen from "screen/splash";
 import LoginScreen from "screen/auth/login";
+import { withExitModal } from "component";
 import HomeScreen from "screen/main/home";
 
 const MainStack = createStackNavigator(
@@ -20,7 +21,7 @@ const MainStack = createStackNavigator(
 
 const AuthStack = createStackNavigator(
   {
-    Login: LoginScreen
+    Login: withExitModal(LoginScreen)
   },
   { headerMode: "none" }
 );

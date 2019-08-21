@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SafeAreaView, Keyboard } from "react-native";
+import { SafeAreaView, Keyboard,View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import Context from "context";
 import Router from "src/Router";
@@ -48,7 +48,7 @@ export default class Application extends Component {
 
   render() {
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         <Spinner
           textContent={Context.getString("app_loading")}
           textStyle={{
@@ -62,7 +62,7 @@ export default class Application extends Component {
         />
         <Router ref="router" />
         <FlashMessage position="top" />
-      </SafeAreaView>
+      </View>
     );
   }
 }

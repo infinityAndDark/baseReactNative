@@ -1,3 +1,3 @@
 export default {
-  HOST:'https://httpstat.us/',
-}
+  HOST: "http://192.168.2.5:8800/api/v1/"
+};

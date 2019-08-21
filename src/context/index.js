@@ -1,4 +1,6 @@
 import Resource from "resource";
+import { Dimensions } from "react-native";
+const win = Dimensions.get("window");
 
 export default class Context {
   static application;
@@ -24,5 +26,8 @@ export default class Context {
   }
   static getSound(key) {
     return this.res.sounds[key];
+  }
+  static getWindow(){
+    return win;
   }
 }
